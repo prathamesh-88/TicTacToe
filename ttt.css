@@ -1,0 +1,73 @@
+h1{
+	color: white;
+	text-transform: uppercase; 
+	font-family: "arial","sans-serif";
+	font-size: 75px;
+	text-align: center;
+	background-color: orange;
+	margin : 0;
+	padding : 15
+	px 0;
+}
+
+body{
+	background-color: #232323;
+	margin : 0;
+}
+
+#main{
+	height: 500px;
+	width:  500px;
+	margin : 30px auto ;
+}
+
+.box{
+	width : 30%;
+	height : 10%;
+	background-color: white;
+	padding-bottom: 20%;
+	float: left;
+	margin : 3px;
+}
+button{
+	height: 100%;
+	background: none;
+	border : none;
+	margin : 0 20%;
+	padding: 3px 10px;
+	font-size: inherit;
+	outline: none;
+}
+
+button:hover{
+	background-color: orange;
+	color: white;
+}
+
+#strip{
+	text-align: center;
+	background-color: white;
+	text-transform: uppercase;
+}
+
+.x{
+	background-image: url("img/x.png");
+	background-size: cover;
+}
+
+.o{
+	background-image: url("img/o.png");
+	background-size: cover;
+}
+
+span{
+	font-family: "arial";
+	height: 100%;
+	margin : 0;
+	padding: 4px;
+}
+
+.active{
+	background-color: orange;
+	color: white;
+}
