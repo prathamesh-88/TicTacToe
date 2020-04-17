@@ -2,9 +2,11 @@
 // 1 for O
 var turn = 0;
 var gameOver = false;
+var moves = 9;
 function reset(){
 	$("#main").slideUp(500, function(){
 		gameOver = false;
+		moves =9;
 		$("span").removeClass("active");
 		$(".box").removeClass("x");
 		$(".box").removeClass("o");
@@ -15,11 +17,18 @@ function reset(){
 	turn=0;
 }
 
+function draw(){
+	$("#winDisplay").text("The game is a draw");
+	$("#winDisplay").fadeIn(400);
+	gameOver = true;	
+}
+
 function gameWin(query) {
 	var win = "";
 	(query == "box x")? win="1" : win ="2";
-	$("#winDisplay span").text(win);
+	$("#winDisplay").text("Player "+win+" wins the game!!!");
 	$("#winDisplay").fadeIn(400);
+	gameOver = true;
 }
 function isGameOver(){
 	if ($("#0").attr("class") == $("#1").attr("class") && 
@@ -55,7 +64,7 @@ function isGameOver(){
 			gameWin($("#6").attr("class"));
 
 	else 
-		return false;
+		gameOver= false;
 
 }
 
@@ -63,6 +72,7 @@ function isGameOver(){
 
 $(".box").on("click",function(){
 	console.log($(this).attr("class"));
+	console.log(gameOver);
 	if (!($(this).hasClass("box x")  || $(this).hasClass("box o")) && !gameOver) {
 		$("span").removeClass("active");
 		if (!turn )
@@ -76,16 +86,12 @@ $(".box").on("click",function(){
 			$(this).addClass("o");
 		}
 		turn = !turn;
+		moves--;
 	}	
-	gameOver = isGameOver();
+	isGameOver();
+	if (moves == 0)
+		draw();
 });
 
 
-
-
 $("#reset").on("click",reset);
-
-$(".box").data({
-		"occupied" : false,
-		"occupiedBy":null
-	});

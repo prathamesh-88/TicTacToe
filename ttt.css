@@ -24,7 +24,8 @@ p{
 	word-spacing: 3px;
 	height : 30px;
 	padding-top:10px ;
-	margin: 0;
+	margin-bottom: 50px;
+	margin-top: 0;
 	font-weight: bold;
 	display : none;
 }
