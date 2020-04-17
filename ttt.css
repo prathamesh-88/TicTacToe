@@ -75,6 +75,10 @@ button:hover{
 	background-size: cover;
 }
 
+.win{
+	background-color: lightgreen;
+}
+
 span{
 	font-family: "arial";
 	height: 100%;
